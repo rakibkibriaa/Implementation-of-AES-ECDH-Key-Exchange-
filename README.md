@@ -91,7 +91,7 @@ python 1905098_f5.py
 
 Alice connects on `127.0.0.1:12345`, the two sides do the key exchange, and then Alice is asked for a message. Bob prints the decrypted result. A fresh curve and key are negotiated for every message. Type `quit` to close both sides.
 
-## Limitations
+##Some Limitations
 
 This was built to understand how the pieces work, not to protect anything real. In particular:
 
@@ -99,7 +99,6 @@ This was built to understand how the pieces work, not to protect anything real. 
 - **Space padding is ambiguous.** If your message ends in spaces, they can't be told apart from padding. PKCS#7 padding fixes this, but I kept spaces for simplicity.
 - **Nothing is authenticated.** CBC without a MAC won't detect tampering, and the key exchange is open to a man-in-the-middle attack because neither side proves who they are.
 - **The socket code is basic.** It assumes each message fits in a single `recv` call and only handles text, so long messages or binary files won't work.
-- **Only 128-bit AES.** The ECDH side is benchmarked at 128, 192, and 256 bits, but AES itself is fixed at 128.
 
 ## Author
 
