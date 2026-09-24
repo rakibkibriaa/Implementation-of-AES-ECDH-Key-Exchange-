@@ -91,7 +91,7 @@ python 1905098_f5.py
 
 Alice connects on `127.0.0.1:12345`, the two sides do the key exchange, and then Alice is asked for a message. Bob prints the decrypted result. A fresh curve and key are negotiated for every message. Type `quit` to close both sides.
 
-##Some Limitations
+#Some Limitations
 
 This was built to understand how the pieces work, not to protect anything real. In particular:
 
